@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url('https://i.pinimg.com/736x/d5/09/99/d5099970a5d4da9cbfd06e0a895caf93.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+.toolbar{
+  flex: 0 0 70px;
+}
+@media screen and (max-width: 500px){
+  .toolbar{
+    flex: 0 0 50px;
+  }
+}
+.main{
+  flex: 1;
+}
+.main .part1{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.part1 img{
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: center;
+}
+.part1 h3{
+  padding: 10px;
+}
+.part1 p{
+  text-align: center;
+}
+@media screen and (max-width: 500px){
+  .media .part1{
+    padding: 20px;
+  }
+  .part1 img{
+    width: 65px;
+    height: 65px;
+  }
+}
+.share-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.share-button:hover{
+  background: rgba(0,0,0,0.1);
+}
+@media screen and (max-width: 500px){
+  .share-button{
+    width: 90%;
+  }
+}
+.share-button img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.share-button p{
+  padding: 5px 10px;
+  text-align: center;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row{
+  display: flex;
+  align-items: center;
+}
+.icon{
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  margin: 5px;
+}
