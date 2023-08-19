@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://heinhtetaungyi.github.io/labs/sitemap.xml
