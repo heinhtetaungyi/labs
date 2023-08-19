@@ -1,0 +1,72 @@
+.intro {
+  display: flex;
+  padding: 30px;
+}
+.intro .part1 {
+  width: 50%;
+  padding: 30px;
+}
+.intro .part2 {
+  width: 50%;
+}
+.intro .swiper {
+  width: 100%;
+  height: 200px;
+}
+.swiper-slide {
+  border-radius: 6px;
+}
+.swiper-button-prev {
+  color: white!important;
+}
+.swiper-button-next {
+  color: white!important;
+}
+.swiper-pagination-bullet {
+  background-color: white!important;
+}
+.swiper-pagination-bullet-active {
+  width: 10px!important;
+  height: 10px!important;
+  background-color: #00A36C!important;
+}
+@media screen and (max-width: 500px) {
+  .intro {
+    display: block;
+    padding: 20px;
+  }
+  .intro .part1 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  .intro .part2 {
+    width: 100%;
+  }
+  .intro .swiper {
+    width: 100%;
+    height: 200px;
+  }
+}
+.swiper-slide div {
+  display: none;
+}
+
+.swiper-slide-active div {
+  transition: 0.5s;
+  display: block;
+  padding: 10px;
+}
+.swiper-slide-active div h2 {
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.swiper-slide-active div p {
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
