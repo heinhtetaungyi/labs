@@ -1,0 +1,110 @@
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: Arial, Sans-Serif;
+}
+:root {
+ --primary: blue;
+}
+
+/* Assign custom properties to themes */
+@media (prefers-color-scheme: light) {
+:root {
+ --color: black
+ --background: white;
+ --color-hint: gray;
+}
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+ --color: white;
+ --background: black;
+ --color-hint: #ccc;
+}
+}
+body {
+ color: var(--color);
+ background: var(--background);
+ overflow-y: auto;
+}
+h1 {
+ text-align: center;
+ padding: 20px;
+}
+h2,h3,h4,h5,h6,ul {
+ padding: 10px 10%;
+}
+ul li {
+ list-style-position: inside;
+ padding: 0 10px;
+}
+p {
+ text-align: justify;
+ padding: 10px 10%;
+}
+@media screen and (max-width:500px) {
+ h2,h3,h4,h5,h6,ul {
+  padding: 10px 20px;
+ }
+ p {
+  padding: 10px 20px;
+ }
+}
+footer {
+ color: var(--color-hint);
+ text-align: center;
+ padding: 20px;
+ font-size: 12px;
+}
+footer a {
+ color: var(--color);
+ text-decoration: none;
+ font-size: 15px;
+ font-weight: bold;
+}
+
+/* Style the form fields */
+form {
+ padding: 5% 25%;
+}
+@media screen and (max-width:500px) {
+ form {
+  padding: 5%;
+ }
+}
+form label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+ width: 100%;
+ padding: 10px 20px;
+ margin-bottom: 15px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+}
+form input:focus, form textarea:focus{
+  outline: blue;
+}
+
+form button {
+ width: 100%;
+ background: blue;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+}
+/* Media queries for responsiveness */
+@media screen and (max-width: 500px) {
+ form input,
+ form textarea,
+ form button {
+  width: 100%;
+ }
+}
