@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="uu" />
+        <meta name="author" content="HeinHtetAung" />
+        <title>Help & Feedback - HeinHtetAungyi's Labs</title>
+        <link rel="stylesheet" href="./samestyle.css" />
+        <link
+            rel="icon"
+            type="image/jpg"
+            href="https://heinhtetaungyi.github.io/labs/upload/hlogo.jpg"
+        />
+    </head>
+    <body>
+        <header>
+            <h1>Help & Feedback</h1>
+        </header>
+        <main>
+            <form name="contact" method="POST" data-netlify="true" action="/">
+                <input type="hidden" name="form-name" value="contact" />
+                <label for="name">Name:</label>
+                <input
+                    
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                />
+                <label for="email">Email:</label>
+                <input
+                    
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                />
+                <label for="message">Message:</label>
+                <textarea
+                    
+                    rows="9"
+                    id="message"
+                    name="message"
+                    required
+                ></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+        <footer>
+            Copyright &copy; 2023
+            <a href="https://heinhtetaungyi.github.io/labs"
+                >HeinHtetAungyi's Labs</a
+            >. All Rights Reserved
+        </footer>
+    </body>
+</html>
