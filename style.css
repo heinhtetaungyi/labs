@@ -1,117 +1,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: "Poppins", sans-serif;
 }
-body{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 100%, rgba(0,0,0,0.9) 100%), url('https://i.pinimg.com/originals/1b/a1/98/1ba198f2a10e4ab7be59bde8bfec8baa.gif') no-repeat center center fixed;
-  background-size: cover;
+html {
+ width: 100%;
+ height: 100%;
 }
-.toolbar{
-  flex: 0 0 70px;
+body {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ background: #333;
+ overflow: hidden;
 }
-@media screen and (max-width: 500px){
-  .toolbar{
-    flex: 0 0 50px;
-  }
+.overlay {
+ background:
+ url('https://i.pinimg.com/originals/1b/a1/98/1ba198f2a10e4ab7be59bde8bfec8baa.gif')
+ no-repeat center center fixed;
+ background-size: cover;
+ overflow: hidden;
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ transition: 0.5s;
 }
-.main{
-  flex: 1;
+.main {
+ flex: 1;
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.5);
+ backdrop-filter: blur(10px);
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ overflow-y: auto;
 }
-.main .part1{
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.main .part1 {
+ padding: 60px 30px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
 }
-.part1 img{
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
-  object-fit: center;
+.part1 img {
+ width: 95px;
+ height: 95px;
+ border-radius: 50%;
+ object-fit: center;
 }
-.part1 h3{
-  color: white;
-  padding: 10px;
-  text-align: center;
+.part1 h3 {
+ color: white;
+ padding: 10px;
+ text-align: center;
 }
-.part1 p{
-  color: #ccc;
-  text-align: center;
+.part1 p {
+ color: #ccc;
+ text-align: center;
+ padding-bottom: 10px;
 }
-@media screen and (max-width: 500px){
-  .media .part1{
-    padding: 20px;
-  }
-  .part1 img{
-    width: 65px;
-    height: 65px;
-  }
+@media screen and (max-width: 500px) {
+ .main .part1 {
+  padding: 30px 20px;
+ }
+ .part1 img {
+  width: 65px;
+  height: 65px;
+ }
 }
-.share-button{
-  user-select: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  width: 50%;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.share-button {
+ text-decoration: none;
+ user-select: none;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ width: 50%;
+ padding: 10px 20px;
+ margin: 10px;
+ border-radius: 6px;
+ background: rgba(255, 255, 255, 0.3);
+ backdrop-filter: blur(10px);
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.share-button:hover{
-  background: rgba(0,0,0,0.1);
+.share-button:hover {
+ background: rgba(0,0,0,0.5);
 }
-@media screen and (max-width: 500px){
-  .share-button{
-    width: 90%;
-  }
+@media screen and (max-width: 500px) {
+ .share-button {
+  width: 90%;
+ }
 }
-.share-button img{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
+.share-button img {
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ object-fit: cover;
+ background: black;
 }
-.share-button p{
-  color: #ccc;
-  padding: 5px 10px;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+.share-button span {
+ color: #ccc;
+ padding: 5px 10px;
+ text-align: center;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden;
 }
-.footer{
-  color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
+.footer {
+ color: #ccc;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+ text-align: center;
 }
-.footer span{
-  color: white;
-  font-weight: bold;
-}
-.row{
-  display: flex;
-  align-items: center;
-}
-.icon{
-  width: 25px;
-  height: 25px;
-  padding: 5px;
-  margin: 5px;
+.footer a {
+ text-decoration: none;
+ color: white;
+ font-weight: bold;
 }
