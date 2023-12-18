@@ -6,6 +6,7 @@
 }
 :root {
  --primary: blue;
+ --primary-text: white;
 }
 
 /* Assign custom properties to themes */
@@ -24,10 +25,11 @@
  --color-hint: #ccc;
 }
 }
-body {
+html, body{
+ width: 100%;
+ height: 100%;
  color: var(--color);
  background: var(--background);
- overflow-y: auto;
 }
 h1 {
  text-align: center;
@@ -41,7 +43,6 @@ ul li {
  padding: 0 10px;
 }
 p {
- text-align: justify;
  padding: 10px 10%;
 }
 @media screen and (max-width:500px) {
@@ -107,4 +108,73 @@ form button {
  form button {
   width: 100%;
  }
+}
+/* App Details */
+.cover{
+ padding: 10px 10%;
+ display: flex;
+}
+.cover .cover-content{
+ flex: 1;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+}
+.cover-content .row{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.cover-content .row img{
+ border-radius: 6px;
+ object-fit: cover;
+ width: 50px;
+ height: 50px;
+ margin: 10px;
+}
+.cover-content .row a{
+ text-decoration: none;
+ color: blue;
+}
+.cover-content .row span, .cover-content .row b{
+ color: var(--color-hint);
+ font-size: 15px;
+}
+.cover-content .row .l{
+ width: 1px;
+ height: 30px;
+ background: var(--color-hint);
+ margin: 15px;
+}
+.cover-content .cover-button{
+ margin: 10px 0 20px 0;
+ color: white;
+ background: blue;
+ padding: 10px 20%;
+ border-radius: 6px;
+ border: none;
+ outline: none;
+}
+.cover-content .cover-image{
+ width: 100%;
+ object-fit: cover;
+ border-radius: 6px;
+}
+@media screen and (max-width: 500px){
+ .cover{
+  padding: 10px 20px;
+ }
+ .cover-content .row span, .cover-content .row b{
+ font-size: 12px;
+}
+}
+
+/*--Optional--*/
+.def{
+ padding: 0;
+ margin: 0;
+}
+.nopm{
+ padding: 0;
+ margin: 0;
 }
