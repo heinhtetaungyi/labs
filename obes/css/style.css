@@ -149,9 +149,9 @@ html, body {
  position: fixed;
  bottom: 0;
  right: 0;
- height: 100%;
+ height: 0;
  width: 100%;
- transition: 0.3s;
+ transition: 0.2s;
  overflow: hidden;
 }
 .contact .view {
@@ -173,6 +173,7 @@ html, body {
  }
 }
 .fit-layout {
+ flex: 1;
  padding: 15px 20px;
  width: 100%;
  height: 100%;
@@ -191,8 +192,8 @@ input {
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 textarea {
+ flex: 1;
  width: 100%;
- height: 300px;
  margin: 5px;
  padding: 10px;
  border-radius: 6px;
@@ -299,41 +300,46 @@ input[type="button"]:hover {
  flex-direction: column;
  align-items: center;
 }
-.gallery .list {
+.list {
  list-style: none;
  columns: 3;
- padding: 0 12px;
- margin: 5px;
+ padding: 10px 10%;
+ margin: 10px;
  gap: 10px;
 }
+.list .pitem {
+ margin-bottom: 10px;
+}
 @media screen and (max-width: 800px) {
- .gallery .list {
+ .list {
   columns: 2;
  }
 }
 @media screen and (max-width: 500px) {
- .gallery .list {
+ .list {
   columns: 1;
+  padding: 10px;
  }
 }
-.gallery .images {
+.images {
  list-style: none;
  columns: 6;
- padding: 0 12px;
- margin: 5px;
+ padding: 10px 10%;
+ margin: 10px;
  gap: 10px;
 }
 @media screen and (max-width: 800px) {
- .gallery .images {
+ .images {
   columns: 3;
  }
 }
 @media screen and (max-width: 500px) {
- .gallery .images {
+ .images {
   columns: 2;
+  padding: 10px;
  }
 }
-.gallery .images .card {
+.images .card {
  display: flex;
  cursor: pointer;
  overflow: hidden;
@@ -366,6 +372,42 @@ input[type="button"]:hover {
 @media screen and (max-width: 500px) {
  .card img {
   height: 100px;
+ }
+}
+.listview {
+ list-style: none;
+ padding: 10px 10%;
+}
+.listview article {
+ display: flex;
+ align-items: center;
+ margin: 10px 10px 0 10px;
+ border-radius: 6px;
+ border: 1px solid #ddd;
+}
+.listview article:hover {
+ background: rgba(0,0,0,0.3);
+}
+.listview article img {
+ width: 100px;
+ height: 100px;
+ object-fit: cover;
+ margin: 10px;
+ border-radius: 5px;
+}
+.listview article .row {
+ margin: 10px 0 10px 10px;
+}
+.listview article .row h3 {}
+.listview article .row p {
+ display: -webkit-box;
+ -webkit-line-clamp: 2;
+ -webkit-box-orient: vertical;
+ overflow: hidden;
+}
+@media screen and (max-width:500px) {
+ .listview {
+  padding: 10px;
  }
 }
 .profile {
