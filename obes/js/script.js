@@ -54,9 +54,10 @@ function initS() {
 }
 
 const drawer = document.querySelector('.drawer');
-
+const contact = document.querySelector('.contact');
 //INIT VARIABLE
 let isOpenDrawer = false;
+var isOpenContact = false;
 function onDrawer() {
  if (isOpenDrawer) {
   drawer.style.width = "0";
@@ -66,7 +67,36 @@ function onDrawer() {
   isOpenDrawer = true;
  }
 }
+function onContact() {
+ if (isOpenContact) {
+  contact.style.height = "0";
+  isOpenContact = false;
+ } else {
+  contact.style.height = "100%";
+  isOpenContact = true;
+ }
+}
+function sendEmail() {
+ let xhr = new XMLHttpRequest();
+ xhr.open("POST", "./data/task.php", true);
+ xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+ xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+   let response = xhr.responseText;
+   console.log(response);
+   if (response === "success") {
+    alert("Email sent successfully!");
+    // Reset form or perform other actions if needed
+   } else {
+    alert("Connect to server to view actual result.");
+   }
+  }
+ };
+
+ let formData = new FormData(document.querySelector("form"));
+ xhr.send(formData);
+}
 function viewLink(link) {
  window.location.href = link;
 }
@@ -93,7 +123,17 @@ function createSlide(data) {
  let container = document.getElementById("slideContainer");
  container.insertAdjacentHTML("beforeend", html);
 }
-
+function createPost(data) {
+ let html = `<article>
+ <img src="${data.image}" alt="${data.title}" />
+ <div class="row">
+ <h3>${data.title} </h3>
+ <p>${data.desc}</p>
+ </div>
+ </article>`
+ let container = document.getElementById("postContainer");
+ container.insertAdjacentHTML("beforeend", html);
+}
 function createImage(data) {
  let html = `<li class="card">
  <img src="${data.image}" alt="Survey Photo" />
@@ -105,7 +145,7 @@ function createImage(data) {
  container.insertAdjacentHTML("beforeend", html);
 }
 function createProfile(data) {
- let html = `<div>
+ let html = `<div class="pitem">
  <img class="profile" src="${data.image}" alt="Profile" />
  <div class="horizontal-layout">
  <h3>Name: &nbsp;</h3>${data.name}</div>
@@ -124,6 +164,7 @@ function createService(data) {
 }
 let arrayList = [];
 let introList = [];
+let postList = [];
 let slideList = [];
 let imageList = [];
 let profileList = [];
@@ -135,13 +176,15 @@ async function loadContents() {
   arrayList = await res.json();
   for (let item of arrayList) {
    if (item) {
-    console.log(item);
+    //console.log(item);
     introList = item.intro;
+    postList = item.posts;
     slideList = item.slides;
     imageList = item.photos;
     profileList = item.profiles;
     serviceList = item.services;
     loadIntro(introList);
+    loadPost(postList);
     loadSlide(slideList);
     loadImage(imageList);
     loadProfile(profileList);
@@ -149,6 +192,13 @@ async function loadContents() {
   }
  } else {
   throw new Error("Failed to fetch contents!");
+ }
+}
+function loadPost(list) {
+ for (let i of list) {
+  if (i) {
+   createPost(i);
+  }
  }
 }
 function loadIntro(list) {
@@ -168,7 +218,7 @@ function loadSlide(list) {
  initS();
 }
 function loadImage(list) {
- console.log(list);
+ //console.log(list);
  for (let i of list) {
   if (i) {
    createImage(i);
