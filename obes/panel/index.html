@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Panel - OBES</title>
+ <link rel="icon" type="image/jpg" href="https://heinhtetaungyi.github.io/labs/obes/data/logo.png" />
+<link rel="stylesheet" href="light.css" />
+<script src="light.js" defer></script>
+<script src="server.js" defer></script>
+</head>
+<body>
+<div class="simple">
+<div class="toolbar">
+<div class="menu" onclick="onMenu();">
+MENU
+</div>
+<div class="center">
+AdminPanel
+</div>
+<div class="load" onclick="loadPost();">
+LOAD
+</div>
+</div>
+<!--toolbar-->
+<div class="layout">
+<h1 class="listtitle"></h1>
+<ul class="listview"></ul>
+<!--listview-->
+</div>
+<!--layout-->
+</div>
+<!--simple-->
+
+<div class="plus" onclick="onServiceLayout();">
++
+</div>
+<div class="service">
+<div class="toolbar">
+<div class="back" onclick="onServiceLayout();">
+Back
+</div>
+<div class="center">
+Add Post
+</div>
+<div class="view" onclick="openView();">
+View
+</div>
+<div class="delete" onclick="onDelete();">
+Delete
+</div>
+<div class="add" onclick="onAdd();">
+Add
+</div>
+</div>
+<!--toolbar-->
+<div class="layout">
+
+
+<select id="option-select">
+<option value="one">Intro</option>
+<option value="two">Slide</option>
+<option value="three">Photo</option>
+<option value="four">Profile</option>
+<option value="five">Service</option>
+<option value="six">Post</option>
+</select>
+
+<input type="text" placeholder="Title" id="title" required />
+<input type="text" placeholder="Image" id="image" />
+<input type="text" placeholder="Link" id="link" />
+<input type="text" placeholder="Major" id="major" />
+<input type="text" placeholder="Phone" id="ph" />
+<textarea
+class="description"
+placeholder="Description"
+id="description"
+></textarea>
+</div>
+<!--layout-->
+</div>
+<!--post-layout-->
+
+<div class="viewlayout">
+<div class="toolbar">
+<div class="back" onclick="closeView();">
+Back
+</div>
+</div>
+<div class="layout">
+<h2 class="title"></h2>
+<p class="description"></p>
+</div>
+<!--layout-->
+</div>
+<!--viewlayout-->
+
+<div class="menulayout">
+<div class="toolbar">
+<div class="back" onclick="onMenu();">
+Back
+</div>
+</div>
+<div class="layout">
+<div class="menuitem">
+Live preview
+</div>
+<div class="menuitem">
+Security and Update
+</div>
+
+<div onclick="onLogout();" class="menuitem" id="logout">
+Logout
+</div>
+</div>
+</div>
+<!--menulayout-->
+
+<div class="loginlayout">
+<h1>AdminPanel</h1>
+<input type="text" placeholder="Username" id="username" />
+<input type="password" placeholder="Password" id="password" />
+<div class="row">
+<input type="checkbox" id="saveme" />
+<span>Save Login</span>
+</div>
+<!--row-->
+
+<input type="submit" onclick="onLogin();" id="login" />
+</div>
+<!--login layout-->
+</body>
+</html>
+</html>

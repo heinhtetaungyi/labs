@@ -1,0 +1,192 @@
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: Arial, Sans-Serif;
+}
+html, body {
+ width: 100%;
+ height: 100%;
+}
+body {
+ background: #ddd;
+}
+.effect {
+ background: rgba(255, 255, 255, 0.3);
+ backdrop-filter: blur(10px);
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.simple {
+ overflow: hidden;
+ width: 100%;
+ height: 100%;
+}
+.service, .menulayout, .viewlayout {
+ width: 100%;
+ height: 0;
+ bottom: 0;
+ position: fixed;
+ overflow: hidden;
+ transition: 0.3s;
+ background: #fff;
+}
+.toolbar {
+ display: flex;
+ align-items: center;
+ width: 100%;
+ height: 60px;
+ border-bottom: 1px solid #ccc;
+ background: white;
+}
+.menuitem {
+ cursor: pointer;
+ user-select: none;
+ padding: 10px 0;
+ border-bottom: 1px solid #ccc;
+ margin-bottom: 5px;
+}
+.menuitem:hover {
+ background: rgba(0,0,0,0.3);
+}
+.menu, .load, .back, .add, .view, .delete {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 6px;
+ padding: 5px 10px;
+ margin: 10px;
+ background: #ddd;
+ cursor: pointer;
+ user-select: none;
+}
+.view {
+ display: none;
+ color: white;
+ background: blue;
+}
+.delete {
+ display: none;
+ color: white!important;
+ background: red!important;
+}
+.menu:hover, .load:hover, .back:hover, .add:hover, .delete:hover {
+ background: rgba(0,0,0,0.3);
+}
+.menu:active, .load:active, .back:active, .add:active {
+ border: 1px solid #11b1ff;
+}
+.center {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+}
+.layout {
+ padding: 20px 20%;
+ width: 100%;
+ height: calc(100% - 60px);
+ overflow-y: auto;
+}
+.plus {
+ user-select: none;
+ cursor: pointer;
+ position: fixed;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ right: 30px;
+ bottom: 60px;
+ color: white;
+ background: #11b1ff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+}
+.plus:hover {
+ background: rgba(0,0,0,0.1);
+}
+.listtitle {
+ padding-bottom: 10px;
+}
+.listview {
+ list-style: none;
+}
+.listview .item {
+ margin: 10px 10px 0 10px;
+ border-radius: 6px;
+ border: 1px solid #ccc;
+ padding: 5px 10px;
+ background: white;
+}
+.listview .item:hover {
+ background: rgba(0,0,0,0.3);
+}
+.item img, ul img {
+ object-fit: cover;
+ border-radius: 8px;
+ margin: 10px;
+ width: 80px;
+ height: 100px;
+}
+.item .row {}
+.item h3 {
+ padding: 10px;
+}
+input {
+ width: 100%;
+ height: 45px;
+ outline: none;
+ margin: 5px;
+ padding: 10px;
+}
+textarea {
+ width: 100%;
+ height: 50%;
+ margin: 5px;
+ padding: 10px;
+ outline: none;
+ resize: none;
+}
+#option-select {
+ width: 100%;
+ height: 45px;
+ border: 1px solid #dddddd;
+ border-radius: 6px;
+ margin: 5px;
+ padding: 10px;
+}
+.loginlayout {
+ padding: 20%;
+ width: 100%;
+ height: 100%;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ position: fixed;
+ overflow-y: auto;
+ transition: 0.3s;
+ background: #fff;
+ z-index: 99;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+}
+.loginlayout .row {
+ display: flex;
+ align-items: center;
+}
+
+.loginlayout .row input[type="checkbox"] {
+ width: 15px;
+ height: 15px;
+}
+
+@media screen and (max-width: 500px) {
+ .layout {
+  padding: 15px 30px;
+ }
+ .loginlayout {
+  padding: 100px 20px;
+ }
+}
