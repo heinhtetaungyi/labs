@@ -15,7 +15,7 @@
 <body>
 
 <div class="layout effect">
- <div class="toolbar effect">
+<div class="toolbar effect">
 
 <div class="nav-large">
 <img class="logo" src="data/logo.png" alt="logo" />
@@ -43,7 +43,7 @@ About
 </div>
 </div>
 
-<div class="contact-us" onclick="viewLink('./page/contact.html');">
+<div class="contact-us" onclick="onContact();">
 Contact
 </div>
 </div>
@@ -76,17 +76,23 @@ Contact
 <!--intro-->
 
 
-<section class="gallery effect" id="home">
-<h3 style="padding: 5px 20px; width: 100%">Home</h3>
+<section class="effect" id="home">
+<h3 style="padding: 10px 20px 0 20px">Home</h3>
+<ul class="listview" id="postContainer">
+</ul>
+</section>
+<!--gallery-->
+<div class="divider"></div>
+<section class="effect">
+<h3 style="padding: 10px 20px 0 20px">Survey Photos</h3>
 <ul class="images" id="imageContainer">
 </ul>
 </section>
 <!--gallery-->
 <div class="divider"></div>
 
-<section class="gallery effect" id="member">
-<h3 style="padding: 5px 20px; width: 100%">Member</h3>
-
+<section class="effect" id="member">
+<h3 style="padding: 10px 20px 0 20px">Members</h3>
 <ul class="list" id="profileContainer">
 </ul>
 </section>
@@ -94,16 +100,16 @@ Contact
 <div class="divider"></div>
 
 <section id="project" class="sample-layout effect">
-<h3 style="padding: 5px 20px; width: 100%">Project</h3>
+<h3 style="padding: 10px 20px 0 20px">Projects</h3>
 </section>
 <div class="divider"></div>
 <section id="service" class="sample-layout effect">
-<h3 style="padding: 5px 20px; width: 100%">Service</h3>
+<h3 style="padding: 10px 20px 0 20px">Service</h3>
 <ul id="serviceContainer"></ul>
 </section>
 <div class="divider"></div>
 <section id="about" class="sample-layout effect">
-<h3 style="padding: 5px 20px; width: 100%">About</h3>
+<h3 style="padding: 10px 20px 0 20px">About</h3>
 </section>
 
 
@@ -142,5 +148,26 @@ About
 </div>
 <!--drawer-->
 
+<div class="contact">
+<div class="view effect">
+<div class="toolbar">
+<div class="nav-item effect" onclick="onContact();">
+<span class="material-symbols-rounded">close</span>
+</div>
+</div>
+<!--toolbar-->
+<div class="main">
+<form class="fit-layout" action="#">
+<input type="text" placeholder="Your Name" name="name" />
+<input type="email" placeholder="Your Email" name="email" />
+<textarea rows="6" class="description" placeholder="Write a message..." name="message"></textarea>
+<input type="button" value="Send" onclick="sendEmail();" />
+</form>
+
+</div>
+<!--main-->
+</div>
+</div>
+<!--contact-->
 </body>
 </html>
